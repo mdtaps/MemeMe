@@ -293,6 +293,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             meme = Meme(textTop: textFieldTop.text!, textBottom: textFieldBottom.text!,
                         image: imagePickerView.image!, memedImage: memedImage)
         }
+        
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
 
 }
