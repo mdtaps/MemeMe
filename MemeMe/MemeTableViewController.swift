@@ -32,33 +32,27 @@ class MemeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if memes.isEmpty {
-            return 0
-        } else {
-            return memes.count
-        }
+
+        return memes.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        if var cell = cell as? MemeTableViewCell {
-            let meme = memes[indexPath.row]
-            cell.memeImageView.image = meme.image
-            cell.topLabel.text = meme.textTop
-            cell.bottomLabel.text = meme.textBottom
-            
-            return cell
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MemeTableViewCell else {
+            return UITableViewCell()
         }
         
-        let defaultCell = UITableViewCell()
-        return defaultCell
+        let meme = memes[indexPath.row]
+        cell.memeImageView.image = meme.image
+        cell.topLabel.text = meme.textTop
+        cell.bottomLabel.text = meme.textBottom
+        
+        return cell
     }
 
     /*
