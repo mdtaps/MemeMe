@@ -14,7 +14,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateMeme" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,7 +32,7 @@
                                 </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="TOP" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="6pe-YN-5j1">
-                                <rect key="frame" x="16" y="74" width="343" height="180"/>
+                                <rect key="frame" x="16" y="30" width="343" height="180"/>
                                 <gestureRecognizers/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -198,7 +198,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LbC-52-a6Z" id="8ad-hd-DCw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-qr-Cxu">
@@ -239,24 +239,6 @@
             </objects>
             <point key="canvasLocation" x="304.80000000000001" y="27.436281859070466"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="S5i-kx-SdY">
-            <objects>
-                <navigationController storyboardIdentifier="CreateMeme" automaticallyAdjustsScrollViewInsets="NO" id="5gL-V9-k6a" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tcj-jH-6I4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yac-Bd-PFT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FKZ-O6-EiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1182" y="566"/>
-        </scene>
         <!--Item-->
         <scene sceneID="Zhe-bw-RyT">
             <objects>
@@ -278,7 +260,7 @@
         <scene sceneID="Mqs-kQ-gyo">
             <objects>
                 <collectionViewController id="caI-uW-svz" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="cxu-W6-2dj">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cxu-W6-2dj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -343,6 +325,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="J8M-1t-Akd">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Q8b-IA-oEo" kind="relationship" relationship="rootViewController" id="C8H-z4-h09"/>
                     </connections>

@@ -17,14 +17,16 @@ class MemeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        //Set up shared model of Memes
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        // Do any additional setup after loading the view.
+        
+        let item = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(openMemeCreator))
+        
+        self.navigationItem.rightBarButtonItem = item
     }
 
     //MARK: UICollectionViewDataSource
@@ -53,6 +55,13 @@ class MemeCollectionViewController: UICollectionViewController {
         cell.topLabel.text = meme.textBottom
     
         return cell
+    }
+    
+    func openMemeCreator() {
+        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? ViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     // MARK: UICollectionViewDelegate
