@@ -9,15 +9,14 @@
 import Foundation
 import UIKit
 
-private let identifier = "Create Meme"
+private let title = "Create Meme"
 
-class CreateMemeButton: NSObject {
+class MemeButton: NSObject {
     
     var viewController: UIViewController?
-    
     func createMemeButton() -> UIBarButtonItem {
         
-        return UIBarButtonItem(title: identifier, style: .plain, target: self, action: #selector(openMemeCreator))
+        return UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(openMemeCreator))
     }
     
     @objc private func openMemeCreator() {

@@ -11,8 +11,8 @@ import UIKit
 
 class MemeTableViewController: UITableViewController {
 
-    var memes: [Meme]!
-    var button = CreateMemeButton()
+    var memes: [Meme] = []
+    var button = MemeButton()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -37,17 +37,19 @@ class MemeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
+        print(memes.count)
         return memes.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? MemeTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? MemeTableViewCell else {
+            print("Failed")
             return UITableViewCell()
         }
         
         let meme = memes[indexPath.row]
-        cell.memeImageView.image = meme.image
+        cell.memeImageView.image = meme.memedImage
         cell.topLabel.text = meme.textTop
         cell.bottomLabel.text = meme.textBottom
         

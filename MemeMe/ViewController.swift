@@ -295,7 +295,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let memedImage = generateMemedImage() {
             meme = Meme(textTop: textFieldTop.text!,
                         textBottom: textFieldBottom.text!,
-                        image: imagePickerView.image!,
+                        image: imagePickerView.image,
                         memedImage: memedImage)
         }
         

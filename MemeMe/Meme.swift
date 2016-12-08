@@ -15,11 +15,16 @@ struct Meme {
     var image: UIImage
     var memedImage: UIImage
     
-    init(textTop: String, textBottom: String, image: UIImage, memedImage: UIImage) {
+    init(textTop: String, textBottom: String, image: UIImage?, memedImage: UIImage) {
         self.textTop = textTop
         self.textBottom = textBottom
-        self.image = image
         self.memedImage = memedImage
+        
+        if let image = image {
+            self.image = image
+        } else {
+            self.image = UIImage()
+        }
     }
     
     init() {

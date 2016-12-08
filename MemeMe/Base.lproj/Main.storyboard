@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -194,32 +195,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="LbC-52-a6Z" customClass="MemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" rowHeight="70" id="LbC-52-a6Z" customClass="MemeTableViewCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LbC-52-a6Z" id="8ad-hd-DCw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-qr-Cxu">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-qr-Cxu">
                                             <rect key="frame" x="8" y="0.0" width="70" height="70"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="N6f-qr-Cxu" secondAttribute="height" multiplier="1:1" id="bNP-lb-wfy"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="F07-cI-Yiv">
-                                            <rect key="frame" x="86" y="48" width="281" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="F07-cI-Yiv">
+                                            <rect key="frame" x="86" y="52" width="281" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="khe-Wb-3m8">
-                                            <rect key="frame" x="86" y="0.0" width="281" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="khe-Wb-3m8">
+                                            <rect key="frame" x="86" y="0.0" width="281" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="N6f-qr-Cxu" firstAttribute="leading" secondItem="8ad-hd-DCw" secondAttribute="leading" constant="8" id="4Fm-Nw-R8y"/>
+                                        <constraint firstItem="khe-Wb-3m8" firstAttribute="top" secondItem="8ad-hd-DCw" secondAttribute="top" id="ZIU-7l-kfu"/>
+                                        <constraint firstItem="khe-Wb-3m8" firstAttribute="leading" secondItem="N6f-qr-Cxu" secondAttribute="trailing" constant="8" id="fAe-x6-1ZZ"/>
+                                        <constraint firstItem="F07-cI-Yiv" firstAttribute="leading" secondItem="N6f-qr-Cxu" secondAttribute="trailing" constant="8" id="gWI-Dr-k4v"/>
+                                        <constraint firstItem="N6f-qr-Cxu" firstAttribute="height" secondItem="8ad-hd-DCw" secondAttribute="height" constant="1" id="giP-cJ-VAw"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="khe-Wb-3m8" secondAttribute="trailing" id="nz8-Jd-ceH"/>
+                                        <constraint firstAttribute="bottom" secondItem="F07-cI-Yiv" secondAttribute="bottom" id="rOT-CL-VAq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="F07-cI-Yiv" secondAttribute="trailing" id="tia-G8-xlh"/>
+                                        <constraint firstItem="N6f-qr-Cxu" firstAttribute="centerY" secondItem="8ad-hd-DCw" secondAttribute="centerY" id="xhY-QU-G5u"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bottomLabel" destination="F07-cI-Yiv" id="vBS-uU-15m"/>
@@ -271,37 +283,28 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="296-BV-e5S" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="296-BV-e5S" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLv-DP-WZo">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vLv-DP-WZo">
                                             <rect key="frame" x="8" y="8" width="84" height="84"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5we-ja-qMb">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMG-Va-M88">
-                                            <rect key="frame" x="0.0" y="70" width="100" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="vLv-DP-WZo" firstAttribute="centerY" secondItem="296-BV-e5S" secondAttribute="centerY" id="0Qg-lP-0Ol"/>
+                                    <constraint firstItem="vLv-DP-WZo" firstAttribute="trailing" secondItem="296-BV-e5S" secondAttribute="trailingMargin" id="8F9-82-gty"/>
+                                    <constraint firstItem="vLv-DP-WZo" firstAttribute="bottom" secondItem="296-BV-e5S" secondAttribute="bottomMargin" id="Mcz-9N-xIx"/>
+                                    <constraint firstItem="vLv-DP-WZo" firstAttribute="centerX" secondItem="296-BV-e5S" secondAttribute="centerX" id="PYa-Gf-JhB"/>
+                                    <constraint firstItem="vLv-DP-WZo" firstAttribute="top" secondItem="296-BV-e5S" secondAttribute="topMargin" id="arR-US-2kh"/>
+                                    <constraint firstItem="vLv-DP-WZo" firstAttribute="leading" secondItem="296-BV-e5S" secondAttribute="leadingMargin" id="pb4-6I-LwT"/>
+                                </constraints>
                                 <connections>
-                                    <outlet property="bottomLabel" destination="RMG-Va-M88" id="o1Q-u4-742"/>
                                     <outlet property="memeImageView" destination="vLv-DP-WZo" id="xVG-Zd-jzX"/>
-                                    <outlet property="topLabel" destination="5we-ja-qMb" id="TTc-Mr-Xu5"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
