@@ -45,6 +45,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         imagePickerView.addGestureRecognizer(tap)
         imagePickerView.addGestureRecognizer(doubleTap)
+        
+        let item = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(popNavigationController))
+        navigationItem.rightBarButtonItem = item
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -290,13 +293,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func saveMeme() {
         if let memedImage = generateMemedImage() {
-            meme = Meme(textTop: textFieldTop.text!, textBottom: textFieldBottom.text!,
-                        image: imagePickerView.image!, memedImage: memedImage)
+            meme = Meme(textTop: textFieldTop.text!,
+                        textBottom: textFieldBottom.text!,
+                        image: imagePickerView.image!,
+                        memedImage: memedImage)
         }
         
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+    }
+    
+    func popNavigationController() {
+        navigationController?.popViewController(animated: true)
     }
 
 }

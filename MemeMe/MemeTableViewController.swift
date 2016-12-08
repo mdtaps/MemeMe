@@ -11,16 +11,20 @@ import UIKit
 
 class MemeTableViewController: UITableViewController {
 
-    var memes = [Meme]()
+    var memes: [Meme]!
+    var button = Button()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let item = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(openMemeCreator))
         
-        self.navigationItem.rightBarButtonItem = item
+        button.viewController = self
+        navigationItem.rightBarButtonItem = button.createMemeButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
     }
 
@@ -52,7 +56,6 @@ class MemeTableViewController: UITableViewController {
     
     func openMemeCreator() {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? ViewController {
-            print("Worked")
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }

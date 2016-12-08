@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8z4-Sw-iaj">
-                                <rect key="frame" x="0.0" y="275.5" width="375" height="167"/>
+                                <rect key="frame" x="0.0" y="276" width="375" height="167"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="aak-qO-807" appends="YES" id="ICX-PM-pjN"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="BOTTOM" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="e2i-QN-akD">
-                                <rect key="frame" x="16" y="449.5" width="343" height="166.5"/>
+                                <rect key="frame" x="16" y="450" width="343" height="166"/>
                                 <gestureRecognizers/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -165,7 +165,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1929" y="567"/>
+            <point key="canvasLocation" x="1842" y="485"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CT5-Lc-WWe">

@@ -8,25 +8,24 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class MemeCollectionViewController: UICollectionViewController {
 
-    var memes = [Meme]()
+    var memes: [Meme]!
+    var button = Button()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        button.viewController = self
+        navigationItem.rightBarButtonItem = button.createMemeButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         //Set up shared model of Memes
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        
-        let item = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(openMemeCreator))
-        
-        self.navigationItem.rightBarButtonItem = item
     }
 
     //MARK: UICollectionViewDataSource
@@ -44,7 +43,7 @@ class MemeCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MemeCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MemeCollectionViewCell else {
             
             return UICollectionViewCell()
         }
@@ -60,6 +59,8 @@ class MemeCollectionViewController: UICollectionViewController {
     func openMemeCreator() {
         
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? ViewController {
+            
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
