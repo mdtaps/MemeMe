@@ -12,7 +12,7 @@ import UIKit
 class MemeTableViewController: UITableViewController {
 
     var memes: [Meme]!
-    var button = Button()
+    var button = CreateMemeButton()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
