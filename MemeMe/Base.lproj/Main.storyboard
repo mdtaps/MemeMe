@@ -250,7 +250,7 @@
         <scene sceneID="Zhe-bw-RyT">
             <objects>
                 <navigationController id="8yw-PD-wWl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" selectedImage="CollectionImage" id="XDb-fs-wPp"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="CollectionImage" id="XDb-fs-wPp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b2d-HU-14p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -318,7 +318,7 @@
         <scene sceneID="rk8-3E-vBB">
             <objects>
                 <navigationController id="Ete-fV-YeM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" selectedImage="TableImage" id="RBc-fK-Oaw"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="TableImage" id="RBc-fK-Oaw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Z8-bS-D7U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
