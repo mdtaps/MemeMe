@@ -13,7 +13,7 @@ class MemeCollectionViewController: UICollectionViewController {
     var memes: [Meme]!
     var button = MemeButton()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +26,7 @@ class MemeCollectionViewController: UICollectionViewController {
         
         //Set up shared model of Memes
         memes = appDelegate.memes
+        self.collectionView?.reloadData()
     }
 
     //MARK: UICollectionViewDataSource

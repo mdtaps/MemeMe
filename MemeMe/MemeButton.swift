@@ -14,6 +14,7 @@ private let title = "Create Meme"
 class MemeButton: NSObject {
     
     var viewController: UIViewController?
+    
     func createMemeButton() -> UIBarButtonItem {
         
         return UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(openMemeCreator))
@@ -21,6 +22,7 @@ class MemeButton: NSObject {
     
     @objc private func openMemeCreator() {
         if let vc = viewController?.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? ViewController {
+            
             
             vc.hidesBottomBarWhenPushed = true
             viewController?.navigationController?.pushViewController(vc, animated: true)

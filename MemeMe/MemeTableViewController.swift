@@ -26,6 +26,7 @@ class MemeTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         memes = appDelegate.memes
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
