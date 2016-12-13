@@ -47,7 +47,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.addGestureRecognizer(tap)
         imagePickerView.addGestureRecognizer(doubleTap)
         
-        let item = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(popNavigationController))
+        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(saveMeme))
+        
         navigationItem.rightBarButtonItem = item
     }
     
@@ -273,6 +274,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.present(activityView, animated: true, completion: nil)
         }
     }
+    
+    func saveMeme() {
+        if let memedImage = generateMemedImage() {
+            meme = Meme(textTop: textFieldTop.text!,
+                        textBottom: textFieldBottom.text!,
+                        image: imagePickerView.image,
+                        memedImage: memedImage)
+        }
+        
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+    }
 
     func generateMemedImage() -> UIImage? {
         let toolBarHeight = toolBar.frame.height
@@ -292,18 +306,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
-    func saveMeme() {
-        if let memedImage = generateMemedImage() {
-            meme = Meme(textTop: textFieldTop.text!,
-                        textBottom: textFieldBottom.text!,
-                        image: imagePickerView.image,
-                        memedImage: memedImage)
-        }
-        
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
-    }
     
     func popNavigationController() {
         navigationController?.popViewController(animated: true)
