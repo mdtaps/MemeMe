@@ -13,7 +13,23 @@ class MemeCollectionViewController: UICollectionViewController {
     var memes: [Meme]!
     var button = MemeButton()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
+    private var cellHeight: CGFloat {
+        get {
+            return (view.frame.size.height - (2 * space)) / 3.0
+        }
+    }
+    
+    private var cellWidth: CGFloat {
+        get {
+            return (view.frame.size.width - (2 * space)) / 3.0
+        }
+    }
+    
+    private let space: CGFloat = 3.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +43,12 @@ class MemeCollectionViewController: UICollectionViewController {
         //Set up shared model of Memes
         memes = appDelegate.memes
         self.collectionView?.reloadData()
+    }
+    
+    func setupLayout() {
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: cellWidth, height: cellHeight)
     }
 
     //MARK: UICollectionViewDataSource

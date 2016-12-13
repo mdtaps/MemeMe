@@ -275,7 +275,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func saveMeme() {
+    @IBAction func saveMeme() {
         if let memedImage = generateMemedImage() {
             meme = Meme(textTop: textFieldTop.text!,
                         textBottom: textFieldBottom.text!,
