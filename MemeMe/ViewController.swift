@@ -47,7 +47,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.addGestureRecognizer(tap)
         imagePickerView.addGestureRecognizer(doubleTap)
         
-        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(saveMeme))
+        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme(_:)))
         
         navigationItem.rightBarButtonItem = item
     }
@@ -259,7 +259,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
     //MARK: Sharing and Saving Meme
-    @IBAction func shareMeme(_ sender: UIBarButtonItem) {
+    func shareMeme(_ sender: UIBarButtonItem) {
         if let memedImage = generateMemedImage() {
             let memedImageArray = [memedImage]
             let activityView = UIActivityViewController(
