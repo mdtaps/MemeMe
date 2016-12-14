@@ -17,7 +17,7 @@ class MemeButton: NSObject {
     
     func createMemeButton() -> UIBarButtonItem {
         
-        return UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(openMemeCreator))
+        return UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(openMemeCreator))
     }
     
     @objc private func openMemeCreator() {

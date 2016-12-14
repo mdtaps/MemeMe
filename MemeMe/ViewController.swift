@@ -30,6 +30,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var imageScale: CGFloat = 1
     
+    let optionsAlertView = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,9 +49,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.addGestureRecognizer(tap)
         imagePickerView.addGestureRecognizer(doubleTap)
         
-        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme(_:)))
+        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme))
         
         navigationItem.rightBarButtonItem = item
+        
+        let saveOption = UIAlertAction(title: "Save", style: .default) { action in
+            self.saveMeme()
+        }
+        
+        optionsAlertView.addAction(saveOption)
+        
+        let clearOption = UIAlertAction(title: "Clear", style: .destructive) { action in
+            self.resetToDefault()
+        }
+        
+        optionsAlertView.addAction(clearOption)
+        
+        let cancelOption = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        optionsAlertView.addAction(cancelOption)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,7 +129,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func resetToDefault(_ sender: UIBarButtonItem) {
+    func resetToDefault() {
         textFieldTop.text = "TOP"
         textFieldBottom.text = "BOTTOM"
         
@@ -259,7 +277,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
     //MARK: Sharing and Saving Meme
-    func shareMeme(_ sender: UIBarButtonItem) {
+    func shareMeme() {
         if let memedImage = generateMemedImage() {
             let memedImageArray = [memedImage]
             let activityView = UIActivityViewController(
@@ -275,7 +293,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    @IBAction func saveMeme() {
+    func saveMeme() {
         if let memedImage = generateMemedImage() {
             meme = Meme(textTop: textFieldTop.text!,
                         textBottom: textFieldBottom.text!,
@@ -306,9 +324,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    @IBAction func showOptionAlert() {
     
-    func popNavigationController() {
-        navigationController?.popViewController(animated: true)
+        present(optionsAlertView, animated: true, completion: nil)
     }
 
 }

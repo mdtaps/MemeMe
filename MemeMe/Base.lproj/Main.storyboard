@@ -70,9 +70,9 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wqm-Bd-OL9"/>
-                                    <barButtonItem title="Save" id="HVb-GI-W3k">
+                                    <barButtonItem title="Options" id="HVb-GI-W3k">
                                         <connections>
-                                            <action selector="saveMeme" destination="BYZ-38-t0r" id="RgL-k6-GWE"/>
+                                            <action selector="showOptionAlert" destination="BYZ-38-t0r" id="f8a-At-60U"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="kRg-dx-ChF"/>
