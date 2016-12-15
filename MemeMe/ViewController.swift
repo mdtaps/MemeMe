@@ -318,20 +318,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func generateMemedImage() -> UIImage? {
-        let toolBarHeight = toolBar.frame.height
+        let toolBarHeight = toolBar.bounds.height
+        var navBarHeight: CGFloat = 0.0
         
-        toolBar.isHidden = true
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        if let navCon = navigationController {
+            print("Nav Height Set")
+            navBarHeight = navCon.navigationBar.frame.height
+        }
         
-        UIGraphicsBeginImageContext(CGSize(width: self.view.frame.width,
-            height: self.view.frame.height - toolBarHeight))
-        self.view.drawHierarchy(in: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height - toolBarHeight), afterScreenUpdates: true)
+        let size = CGSize(width: view.bounds.width, height: view.bounds.height - toolBarHeight - navBarHeight)
+        
+        UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
+        
+        view.drawHierarchy(in: CGRect(
+            x: 0,
+            y: 0 - navBarHeight,
+            width: view.bounds.size.width,
+            height: view.bounds.size.height), afterScreenUpdates: true)
+        
         let memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
-        toolBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        
         return memedImage
     }
     
