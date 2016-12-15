@@ -77,15 +77,13 @@ class MemeCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    func openMemeCreator() {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? ViewController {
-            
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let meme = memes[indexPath.row]
+        button.meme = meme
+        button.openMemeCreator()
     }
-
+    
     // MARK: UICollectionViewDelegate
 
     /*

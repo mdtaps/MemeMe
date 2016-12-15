@@ -35,9 +35,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Setup text fields
         textFieldTop = addTextFieldAttributes(textFieldTop)
         textFieldBottom = addTextFieldAttributes(textFieldBottom)
         
+        textFieldTop.text = meme.textTop
+        textFieldBottom.text = meme.textBottom
+        imagePickerView.image = meme.image
+
+        
+        //Setup gesture recognizers
         let tap = UITapGestureRecognizer(target: self, action: #selector(selectImagePicker(gesture:)))
         tap.numberOfTapsRequired = 1
         
@@ -49,10 +56,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.addGestureRecognizer(tap)
         imagePickerView.addGestureRecognizer(doubleTap)
         
+        
+        //Setup sharing bar button
         let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme))
         
         navigationItem.rightBarButtonItem = item
         
+        
+        //Setup Alert View
         let saveOption = UIAlertAction(title: "Save", style: .default) { action in
             self.saveMeme()
         }

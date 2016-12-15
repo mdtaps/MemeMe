@@ -56,13 +56,14 @@ class MemeTableViewController: UITableViewController {
         return cell
     }
     
-    func openMemeCreator() {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? ViewController {
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let meme = memes[indexPath.row]
+        button.meme = meme
+        button.openMemeCreator()
 
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

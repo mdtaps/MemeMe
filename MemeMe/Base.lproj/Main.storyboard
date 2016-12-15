@@ -32,7 +32,7 @@
                                     <outletCollection property="gestureRecognizers" destination="0cz-Pc-t0Y" appends="YES" id="dnh-ME-JyY"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="TOP" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="6pe-YN-5j1">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="6pe-YN-5j1">
                                 <rect key="frame" x="16" y="30" width="343" height="180"/>
                                 <gestureRecognizers/>
                                 <nil key="textColor"/>
@@ -43,7 +43,7 @@
                                     <outletCollection property="gestureRecognizers" destination="W6o-aE-zok" appends="YES" id="VpI-fb-lGW"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" text="BOTTOM" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="e2i-QN-akD">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="e2i-QN-akD">
                                 <rect key="frame" x="16" y="450" width="343" height="166"/>
                                 <gestureRecognizers/>
                                 <nil key="textColor"/>

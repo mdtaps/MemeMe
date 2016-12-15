@@ -28,8 +28,8 @@ struct Meme {
     }
     
     init() {
-        textTop = ""
-        textBottom = ""
+        textTop = "TOP"
+        textBottom = "BOTTOM"
         image = UIImage()
         memedImage = UIImage()
     }
