@@ -27,7 +27,11 @@ class MemeButton: NSObject {
     @objc func openMemeCreator() {
         if let vc = viewController?.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? ViewController {
             
-            vc.hidesBottomBarWhenPushed = true
+            if viewController is PreviewViewController {
+                vc.hidesBottomBarWhenPushed = false
+            } else {
+                vc.hidesBottomBarWhenPushed = true
+            }
             
             if let currentMeme = meme {
                 vc.meme = currentMeme

@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8z4-Sw-iaj">
-                                <rect key="frame" x="0.0" y="276" width="375" height="167"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8z4-Sw-iaj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="aak-qO-807" appends="YES" id="ICX-PM-pjN"/>
@@ -35,6 +34,9 @@
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="6pe-YN-5j1">
                                 <rect key="frame" x="16" y="30" width="343" height="180"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Db7-DF-UwT"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -46,6 +48,9 @@
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="e2i-QN-akD">
                                 <rect key="frame" x="16" y="450" width="343" height="166"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="5Ev-Ga-mqC"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -82,26 +87,20 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="8z4-Sw-iaj" secondAttribute="trailing" constant="-16" id="3uN-ee-P8Q"/>
-                            <constraint firstItem="6pe-YN-5j1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="4JX-ne-bub"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="e2i-QN-akD" secondAttribute="trailing" id="BFa-ie-DQb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZSG-ZS-N9w" secondAttribute="bottom" id="BU3-o2-yr1"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="6pe-YN-5j1" secondAttribute="leading" id="CfG-Yc-hUN"/>
-                            <constraint firstItem="8z4-Sw-iaj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GW6-ys-kQ4"/>
-                            <constraint firstItem="8z4-Sw-iaj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="KgF-1M-LKa"/>
-                            <constraint firstItem="e2i-QN-akD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="LhT-8G-U4T"/>
-                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OcL-9P-Lb2"/>
-                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="top" secondItem="e2i-QN-akD" secondAttribute="bottom" constant="7" id="VxM-YG-bou"/>
-                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XPl-E8-cIV"/>
-                            <constraint firstItem="8z4-Sw-iaj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Yf9-6a-t16"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6pe-YN-5j1" secondAttribute="trailing" id="bJq-sL-voZ"/>
-                            <constraint firstItem="6pe-YN-5j1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.27" id="bch-tb-Oob"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="e2i-QN-akD" secondAttribute="leading" id="cFw-J6-dC4"/>
-                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="eY6-4E-0oN"/>
-                            <constraint firstItem="e2i-QN-akD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lsV-zU-kOm"/>
-                            <constraint firstAttribute="trailing" secondItem="ZSG-ZS-N9w" secondAttribute="trailing" id="p6N-Qk-p2L"/>
-                            <constraint firstItem="e2i-QN-akD" firstAttribute="top" secondItem="8z4-Sw-iaj" secondAttribute="bottom" constant="7" id="s24-Ak-ncC"/>
-                            <constraint firstItem="6pe-YN-5j1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xpT-eU-FWw"/>
+                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="top" secondItem="e2i-QN-akD" secondAttribute="bottom" constant="7" id="Jc4-6M-Y0W"/>
+                            <constraint firstItem="8z4-Sw-iaj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KBQ-17-fzI"/>
+                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Liq-D3-syb"/>
+                            <constraint firstItem="8z4-Sw-iaj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QTt-CV-He4"/>
+                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="top" secondItem="e2i-QN-akD" secondAttribute="bottom" constant="7" id="R6k-Ua-STN"/>
+                            <constraint firstItem="6pe-YN-5j1" firstAttribute="trailing" secondItem="e2i-QN-akD" secondAttribute="trailing" id="SEK-w4-d6a"/>
+                            <constraint firstAttribute="trailing" secondItem="ZSG-ZS-N9w" secondAttribute="trailing" id="SrF-uo-Hyo"/>
+                            <constraint firstItem="6pe-YN-5j1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="UF3-gg-WPg"/>
+                            <constraint firstItem="e2i-QN-akD" firstAttribute="centerX" secondItem="ZSG-ZS-N9w" secondAttribute="centerX" id="c7w-fT-fYW"/>
+                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dRQ-lx-rsw"/>
+                            <constraint firstItem="6pe-YN-5j1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iQP-mx-Pem"/>
+                            <constraint firstItem="8z4-Sw-iaj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="oV5-uS-cVr"/>
+                            <constraint firstItem="6pe-YN-5j1" firstAttribute="leading" secondItem="e2i-QN-akD" secondAttribute="leading" id="tN2-Xn-VdM"/>
+                            <constraint firstItem="ZSG-ZS-N9w" firstAttribute="top" secondItem="8z4-Sw-iaj" secondAttribute="bottom" id="tSC-H3-3oc"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="xgb-Np-25i" appends="YES" id="ZEM-Vb-OoK"/>
@@ -161,7 +160,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2081" y="485"/>
+            <point key="canvasLocation" x="2080.8000000000002" y="484.40779610194909"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CT5-Lc-WWe">
@@ -258,7 +257,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DaL-oM-h9N">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DaL-oM-h9N">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
