@@ -24,7 +24,7 @@ class PreviewViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.rightBarButtonItem = button.editMemeButton()
+        navigationItem.rightBarButtonItem = button.createMemeButton()
         button.viewController = self
         button.meme = meme
     }

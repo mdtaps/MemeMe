@@ -10,7 +10,10 @@ import UIKit
 import Foundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate  {
-        
+    
+    //MARK: Properties
+    
+    //Outlets
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var textFieldTop: UITextField!
@@ -113,6 +116,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return textField
     }
     
+    //MARK: Show Alert
+    @IBAction func showOptionAlert() {
+        
+        present(optionsAlertView, animated: true, completion: nil)
+    }
+
     //MARK: Image Picking Process
     @IBAction func pickImage(_ sender: UIBarButtonItem) {
         let pickerController = UIImagePickerController()
@@ -340,10 +349,4 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         return memedImage
     }
-    
-    @IBAction func showOptionAlert() {
-    
-        present(optionsAlertView, animated: true, completion: nil)
-    }
-
 }

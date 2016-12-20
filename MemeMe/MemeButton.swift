@@ -16,12 +16,15 @@ class MemeButton: NSObject {
     
     func createMemeButton() -> UIBarButtonItem {
         
-        return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openMemeCreator))
-    }
-    
-    func editMemeButton() -> UIBarButtonItem {
+        var systemItem: UIBarButtonSystemItem
         
-        return UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(openMemeCreator))
+        if viewController is PreviewViewController {
+            systemItem = .edit
+        } else {
+            systemItem = .add
+        }
+        
+        return UIBarButtonItem(barButtonSystemItem: systemItem, target: self, action: #selector(openMemeCreator))
     }
     
     @objc func openMemeCreator() {
