@@ -320,19 +320,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage? {
         let toolBarHeight = toolBar.bounds.height
         var navBarHeight: CGFloat = 0.0
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
         if let navCon = navigationController {
-            print("Nav Height Set")
             navBarHeight = navCon.navigationBar.frame.height
         }
         
-        let size = CGSize(width: view.bounds.width, height: view.bounds.height - toolBarHeight - navBarHeight)
+        let size = CGSize(width: view.bounds.width, height: view.bounds.height - toolBarHeight - navBarHeight - statusBarHeight)
         
         UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
         
         view.drawHierarchy(in: CGRect(
             x: 0,
-            y: 0 - navBarHeight,
+            y: 0 - navBarHeight - statusBarHeight,
             width: view.bounds.size.width,
             height: view.bounds.size.height), afterScreenUpdates: true)
         

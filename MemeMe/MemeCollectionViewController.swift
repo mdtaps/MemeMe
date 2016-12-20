@@ -11,6 +11,7 @@ import UIKit
 class MemeCollectionViewController: UICollectionViewController {
 
     var memes: [Meme]!
+    var preview: PreviewViewController?
     var button = MemeButton()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -80,8 +81,13 @@ class MemeCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let meme = memes[indexPath.row]
-        button.meme = meme
-        button.openMemeCreator()
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "PreviewMeme") as? PreviewViewController {
+            
+            vc.meme = meme
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     // MARK: UICollectionViewDelegate

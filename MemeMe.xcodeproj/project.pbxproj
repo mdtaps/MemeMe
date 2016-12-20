@@ -21,6 +21,7 @@
 		AFAD42AA1DD2E5950033782F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAD42A91DD2E5950033782F /* Images.xcassets */; };
 		AFB7DEB31DB5D8FF009C091F /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7DEB21DB5D8FF009C091F /* Meme.swift */; };
 		AFE0EC0E1DF166A2009EDBE6 /* MemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0EC0D1DF166A2009EDBE6 /* MemeButton.swift */; };
+		AFEBB6771E08D80F0088E35E /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEBB6761E08D80F0088E35E /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		AFAD42A91DD2E5950033782F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AFB7DEB21DB5D8FF009C091F /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		AFE0EC0D1DF166A2009EDBE6 /* MemeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeButton.swift; sourceTree = "<group>"; };
+		AFEBB6761E08D80F0088E35E /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				AF88B3981D87428B0047E874 /* AppDelegate.swift */,
 				AF88B39A1D87428B0047E874 /* ViewController.swift */,
+				AFEBB6761E08D80F0088E35E /* PreviewViewController.swift */,
 				AFB7DEB21DB5D8FF009C091F /* Meme.swift */,
 				AF9F73001DF012AA00A2E33C /* MemeCollectionViewController.swift */,
 				AF9F73041DF0184F00A2E33C /* MemeTableViewController.swift */,
@@ -292,6 +295,7 @@
 				AF9F73071DF0187100A2E33C /* MemeTableViewCell.swift in Sources */,
 				AF88B39B1D87428B0047E874 /* ViewController.swift in Sources */,
 				AF88B3991D87428B0047E874 /* AppDelegate.swift in Sources */,
+				AFEBB6771E08D80F0088E35E /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

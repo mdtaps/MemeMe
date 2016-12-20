@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-private let title = "Create Meme"
-
 class MemeButton: NSObject {
     
     var viewController: UIViewController?
@@ -18,7 +16,12 @@ class MemeButton: NSObject {
     
     func createMemeButton() -> UIBarButtonItem {
         
-        return UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(openMemeCreator))
+        return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openMemeCreator))
+    }
+    
+    func editMemeButton() -> UIBarButtonItem {
+        
+        return UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(openMemeCreator))
     }
     
     @objc func openMemeCreator() {

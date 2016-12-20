@@ -161,7 +161,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1311" y="485"/>
+            <point key="canvasLocation" x="2081" y="485"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CT5-Lc-WWe">
@@ -181,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="-1530" y="486"/>
         </scene>
-        <!--Table-->
+        <!--Sent Memes-->
         <scene sceneID="2lY-Xj-lrA">
             <objects>
                 <tableViewController id="Q8b-IA-oEo" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -240,11 +240,43 @@
                             <outlet property="delegate" destination="Q8b-IA-oEo" id="JTW-6D-pkR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Table" id="UoP-HI-82M"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="UoP-HI-82M"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Kf-1F-gcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="304.80000000000001" y="27.436281859070466"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="26h-hS-aNz">
+            <objects>
+                <viewController storyboardIdentifier="PreviewMeme" id="9Vj-bk-T4x" customClass="PreviewViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="baB-7Q-w4V"/>
+                        <viewControllerLayoutGuide type="bottom" id="zCS-S5-dDK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WCH-qP-JLl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DaL-oM-h9N">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DaL-oM-h9N" secondAttribute="trailing" id="Gei-47-Doe"/>
+                            <constraint firstItem="DaL-oM-h9N" firstAttribute="bottom" secondItem="zCS-S5-dDK" secondAttribute="top" id="YpB-Dd-Uxk"/>
+                            <constraint firstItem="DaL-oM-h9N" firstAttribute="top" secondItem="baB-7Q-w4V" secondAttribute="bottom" id="bdU-LS-Nxx"/>
+                            <constraint firstItem="DaL-oM-h9N" firstAttribute="leading" secondItem="WCH-qP-JLl" secondAttribute="leading" id="nr4-fm-nf6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewImage" destination="DaL-oM-h9N" id="5Cp-xO-EFx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snr-OH-0Zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271" y="485"/>
         </scene>
         <!--Collection-->
         <scene sceneID="Zhe-bw-RyT">
@@ -263,7 +295,7 @@
             </objects>
             <point key="canvasLocation" x="-639" y="1061"/>
         </scene>
-        <!--Collection-->
+        <!--Sent Memes-->
         <scene sceneID="Mqs-kQ-gyo">
             <objects>
                 <collectionViewController id="caI-uW-svz" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -308,7 +340,7 @@
                             <outlet property="delegate" destination="caI-uW-svz" id="wLB-bl-c1U"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Collection" id="mCm-A1-Vos"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="mCm-A1-Vos"/>
                     <connections>
                         <outlet property="flowLayout" destination="86k-oC-1eB" id="8zv-ag-wVu"/>
                     </connections>
