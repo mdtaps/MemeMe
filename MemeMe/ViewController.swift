@@ -299,7 +299,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
     //MARK: Sharing and Saving Meme
-    @IBAction func shareMeme() {
+    func shareMeme() {
         if let memedImage = generateMemedImage() {
             let memedImageArray = [memedImage]
             let activityView = UIActivityViewController(
@@ -353,7 +353,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     //Cancel Meme
-    @IBAction func cancelMeme() {
+    func cancelMeme() {
         dismiss(animated: true, completion: nil)
     }
 }
