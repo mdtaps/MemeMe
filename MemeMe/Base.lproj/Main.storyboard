@@ -111,11 +111,11 @@
                     <connections>
                         <outlet property="cameraButton" destination="RTi-sP-Pzi" id="WCu-w7-ZAE"/>
                         <outlet property="imagePickerView" destination="8z4-Sw-iaj" id="1yI-NK-PeM"/>
-                        <outlet property="libraryButton" destination="zuw-l8-B20" id="4nk-2d-l68"/>
+                        <outlet property="libraryButton" destination="zuw-l8-B20" id="EGm-7g-C8h"/>
                         <outlet property="memeView" destination="8bC-Xf-vdC" id="7XK-HP-vDa"/>
                         <outlet property="textFieldBottom" destination="e2i-QN-akD" id="ilt-gj-9vp"/>
                         <outlet property="textFieldTop" destination="6pe-YN-5j1" id="UVn-K1-PwP"/>
-                        <outlet property="toolBar" destination="ZSG-ZS-N9w" id="ngi-1D-HfJ"/>
+                        <outlet property="toolBar" destination="ZSG-ZS-N9w" id="irU-2C-sjV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,7 +160,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2080.8000000000002" y="484.40779610194909"/>
+            <point key="canvasLocation" x="2218" y="485"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CT5-Lc-WWe">

@@ -59,13 +59,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.addGestureRecognizer(tap)
         imagePickerView.addGestureRecognizer(doubleTap)
         
-        
-        //Setup sharing bar button
-        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme))
-        
-        navigationItem.rightBarButtonItem = item
-        
-        
         //Setup Alert View
         let saveOption = UIAlertAction(title: "Save", style: .default) { action in
             self.saveMeme()
@@ -90,6 +83,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         libraryButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
         subscribeToKeyboardNotifications()
+        
+        let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(cancelMeme))
+        
+        navigationItem.leftBarButtonItem = shareItem
+        
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelMeme))
+        
+        navigationItem.rightBarButtonItem = cancelItem
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -297,7 +299,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
     //MARK: Sharing and Saving Meme
-    func shareMeme() {
+    @IBAction func shareMeme() {
         if let memedImage = generateMemedImage() {
             let memedImageArray = [memedImage]
             let activityView = UIActivityViewController(
@@ -328,25 +330,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func generateMemedImage() -> UIImage? {
         let toolBarHeight = toolBar.bounds.height
-        var navBarHeight: CGFloat = 0.0
+        var topNavBarHeight: CGFloat = 0.0
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
-        if let navCon = navigationController {
-            navBarHeight = navCon.navigationBar.frame.height
+        if let navBar = navigationController?.navigationBar {
+            topNavBarHeight = navBar.bounds.height
         }
         
-        let size = CGSize(width: view.bounds.width, height: view.bounds.height - toolBarHeight - navBarHeight - statusBarHeight)
+        let size = CGSize(width: view.bounds.width, height: view.bounds.height - toolBarHeight - topNavBarHeight - statusBarHeight)
         
         UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
         
         view.drawHierarchy(in: CGRect(
             x: 0,
-            y: 0 - navBarHeight - statusBarHeight,
+            y: 0 - topNavBarHeight - statusBarHeight,
             width: view.bounds.size.width,
             height: view.bounds.size.height), afterScreenUpdates: true)
         
         let memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return memedImage
+    }
+    
+    //Cancel Meme
+    @IBAction func cancelMeme() {
+        dismiss(animated: true, completion: nil)
     }
 }
