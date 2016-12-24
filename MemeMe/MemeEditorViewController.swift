@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate  {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate  {
     
     //MARK: Properties
     
@@ -84,7 +84,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         libraryButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
         subscribeToKeyboardNotifications()
         
-        let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(cancelMeme))
+        let shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareMeme))
         
         navigationItem.leftBarButtonItem = shareItem
         
@@ -307,6 +307,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             activityView.completionWithItemsHandler = {
                 action, completed, items, error in
                 if completed {
+                    self.cancelMeme()
                     self.saveMeme()
                 }
             }

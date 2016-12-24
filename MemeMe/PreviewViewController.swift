@@ -18,14 +18,15 @@ class PreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        previewImage.image = meme.memedImage
+        button.viewController = self
+        navigationItem.rightBarButtonItem = button.createMemeButton()
+        button.meme = meme
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        button.viewController = self
-        navigationItem.rightBarButtonItem = button.createMemeButton()
-        button.meme = meme
+        previewImage.image = meme.memedImage
     }
 }

@@ -38,7 +38,7 @@ class MemeButton: NSObject {
     @objc func openMemeCreator() {
         
         //Instatiate Create Meme View
-        if let vc = viewController?.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? ViewController {
+        if let vc = viewController?.storyboard?.instantiateViewController(withIdentifier: "CreateMeme") as? MemeEditorViewController {
             
             //Hide bottom bar only when pushed from tab
             //view controller
